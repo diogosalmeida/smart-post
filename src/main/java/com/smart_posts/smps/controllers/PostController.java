@@ -1,15 +1,19 @@
 package com.smart_posts.smps.controllers;
 
+import com.smart_posts.smps.core.post.Post;
 import com.smart_posts.smps.core.post.dto.PostDto;
 import com.smart_posts.smps.core.post.services.PostService;
 import com.smart_posts.smps.core.user.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/posts")
@@ -26,6 +30,12 @@ public class PostController {
             return new ResponseEntity<>(postDto, HttpStatus.CREATED);
         }
         return new ResponseEntity<>(postDto, HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Post>> getPosts() {
+        final var posts = postService.findAllPosts();
+        return new ResponseEntity<>(posts, HttpStatus.OK);
     }
 }
 

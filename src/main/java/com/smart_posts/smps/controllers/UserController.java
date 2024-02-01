@@ -29,8 +29,8 @@ public class UserController {
     }
 
     @GetMapping("/search")
-    public List<User> getUsers() {
-        List<User> users = userService.findAllUsers();
-        return ResponseEntity.ok(users).getBody();
+    public ResponseEntity<List<User>> getUsers() {
+        final var users = userService.findAllUsers();
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 }

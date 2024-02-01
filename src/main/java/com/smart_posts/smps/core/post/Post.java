@@ -1,5 +1,6 @@
 package com.smart_posts.smps.core.post;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.smart_posts.smps.core.post.dto.PostDto;
 import com.smart_posts.smps.core.user.User;
 import com.smart_posts.smps.core.user.dto.UserDto;
@@ -18,7 +19,8 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id", insertable = false, updatable = false)
+    @Column(name = "user_id")
+    @JsonProperty("user_id")
     private Long userId;
 
     private String title;
@@ -33,11 +35,7 @@ public class Post {
         this.userId = userId;
     }
 
-    public static Post from(final PostDto postDto) {
-        return new Post(
-                postDto.getTitle(),
-                postDto.getBody(),
-                postDto.getUserId()
-        );
+    public Post() {
+
     }
 }
