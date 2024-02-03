@@ -1,8 +1,7 @@
-package com.smart_posts.smps.core.user;
+package com.smart_posts.smps.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.smart_posts.smps.core.post.Post;
-import com.smart_posts.smps.core.user.dto.UserDto;
+import com.smart_posts.smps.cases.user.dto.UserDto;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

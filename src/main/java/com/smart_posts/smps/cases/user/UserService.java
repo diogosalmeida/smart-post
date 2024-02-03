@@ -1,8 +1,8 @@
-package com.smart_posts.smps.core.user.services;
+package com.smart_posts.smps.cases.user;
 
-import com.smart_posts.smps.core.user.User;
-import com.smart_posts.smps.core.user.dto.UserDto;
-import com.smart_posts.smps.core.user.repositoty.UserRepository;
+import com.smart_posts.smps.domain.User;
+import com.smart_posts.smps.cases.user.dto.UserDto;
+import com.smart_posts.smps.infrastructure.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

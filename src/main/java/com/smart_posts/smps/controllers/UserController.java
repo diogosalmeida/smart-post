@@ -1,8 +1,8 @@
 package com.smart_posts.smps.controllers;
 
-import com.smart_posts.smps.core.user.User;
-import com.smart_posts.smps.core.user.dto.UserDto;
-import com.smart_posts.smps.core.user.services.UserService;
+import com.smart_posts.smps.domain.User;
+import com.smart_posts.smps.cases.user.dto.UserDto;
+import com.smart_posts.smps.cases.user.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

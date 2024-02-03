@@ -1,6 +1,6 @@
-package com.smart_posts.smps.core.user.dto;
+package com.smart_posts.smps.cases.user.dto;
 
-import com.smart_posts.smps.core.user.User;
+import com.smart_posts.smps.domain.User;
 import lombok.Builder;
 import lombok.Data;
 

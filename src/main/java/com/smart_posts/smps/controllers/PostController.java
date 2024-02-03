@@ -1,9 +1,9 @@
 package com.smart_posts.smps.controllers;
 
-import com.smart_posts.smps.core.post.Post;
-import com.smart_posts.smps.core.post.dto.PostDto;
-import com.smart_posts.smps.core.post.services.PostService;
-import com.smart_posts.smps.core.user.services.UserService;
+import com.smart_posts.smps.domain.Post;
+import com.smart_posts.smps.cases.post.dto.PostDto;
+import com.smart_posts.smps.cases.post.PostService;
+import com.smart_posts.smps.cases.user.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,8 +25,8 @@ public class PostController {
 
     @PostMapping("/create")
     public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto) {
-        postService.createPost(postDto);
         if(userService.findUserById(postDto.getUserId())) {
+            postService.createPost(postDto);
             return new ResponseEntity<>(postDto, HttpStatus.CREATED);
         }
         return new ResponseEntity<>(postDto, HttpStatus.NOT_FOUND);

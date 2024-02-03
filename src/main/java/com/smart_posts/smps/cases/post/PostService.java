@@ -1,8 +1,8 @@
-package com.smart_posts.smps.core.post.services;
+package com.smart_posts.smps.cases.post;
 
-import com.smart_posts.smps.core.post.Post;
-import com.smart_posts.smps.core.post.dto.PostDto;
-import com.smart_posts.smps.core.post.repository.PostRepository;
+import com.smart_posts.smps.domain.Post;
+import com.smart_posts.smps.cases.post.dto.PostDto;
+import com.smart_posts.smps.infrastructure.PostRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
